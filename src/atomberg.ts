@@ -182,6 +182,8 @@ export async function loadFans(forceRefresh = false): Promise<Fan[]> {
     const state = states.get(device.device_id);
     return {
       ...device,
+      // Names come back exactly as typed in the Atomberg app, padding included.
+      name: device.name?.trim() || device.device_id,
       power: state?.power ?? false,
       last_recorded_speed: state?.last_recorded_speed ?? 1,
       sleep_mode: state?.sleep_mode,

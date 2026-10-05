@@ -91,21 +91,6 @@ Token** fields have to be emptied by hand in the pane that opens.
 That only removes the keys from this Mac. To revoke them properly, turn off **Developer
 Options** in the Atomberg Home app, which invalidates the refresh token everywhere.
 
-## Command line
-
-[`cli/atomberg.py`](cli/atomberg.py) is a standalone version of the same thing, with no
-dependencies beyond Python 3. Useful for scripting and cron.
-
-```sh
-python3 cli/atomberg.py devices
-python3 cli/atomberg.py speed 4
-python3 cli/atomberg.py off bedroom
-python3 cli/atomberg.py logout
-```
-
-It reads credentials from `~/.config/atomberg/config.json` or the `ATOMBERG_API_KEY` and
-`ATOMBERG_REFRESH_TOKEN` environment variables.
-
 ## Development
 
 ```sh
